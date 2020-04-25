@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha256-zmfNZmXoNWBMemUOo1XUGFfc0ihGGLYdgtJS3KCr/l0=" crossorigin="anonymous" />
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+    <!-- <title>Hello, world!</title> -->
+    {% load static %}
+
+<link  rel="shortcut icon" type="image" href='{% static "shop/img/2.png" %}'>
+    <style>
+        {% block css %}
+        .container-fluid
+        {
+          margin: 0px;
+          padding: 0PX;
+        }
+
+        .narrow
+{
+ background: linear-gradient(50deg, red, blue );
+
+}
+
+
+
+          .col-md-3
+          {
+
+          display: inline-block;
+          margin-left:-4px;
+
+          }
+          .carousel-indicators .active {
+          background-color: blue;
+            }
+          .col-md-3 img{
+          width:100%;
+          height:auto;
+          }
+          body .carousel-indicator li{
+          background-color: blue;
+          }
+          body .carousel-indicators{
+          bottom: 0;
+          }
+          body .carousel-control-prev-icon,
+          body .carousel-control-next-icon{
+          background-color: blue;
+          }
+           body .no-padding{
+           padding-left: 0,
+           padding-right: 0;
+           }
+
+  * {
+    margin: 0px;
+    padding: 0px;
+   /*font-family: 'Kaushan Script', cursive;*/
+   font-family: 'Roboto', sans-serif;
+}
+
+ button
+{
+
+      background: linear-gradient(57deg, #0000 , black);
+
+
+}
+
+ button:hover{
+      background: linear-gradient(57deg, red, blue );
+}
+ ul
+ {
+  list-style: none;
+ }
+
+ ul li
+ {
+  text-decoration: none;
+
+ }
+ul li a
+{
+  font-size: 20px;
+}
+
+/*.narrow*/
+/*{*/
+/* background: linear-gradient(50deg, red, blue );*/
+
+/*}*/
+
+
+
+
+
+    {% endblock %}
+    </style>
+</head>
+
+
+  <body>
+
+<section class="container-fluid bg-secondary">
+<marquee direction="right"scrollamount="10%"><font color="#fff" face="Arial"align="centre" size="=+5"><h3 class="fas  fa-street-view [&#xf21d;]  "> WWW.Onlineguru.COM <b class=" ml-5 fas fa-phone [&#xf232;] "> +918839102688</b> <b class="ml-5 fas fa-envelope"> sptech1698@gmail.Com</b></h3> </font></marquee>
+
+</section>
+
+
+    <section class="container-fluid bg-dark  mr-auto shake">
+        <nav class="navbar navbar-expand-lg navbar-dark  ml-5 animated  pulse m-auto ">
+            <!-- <div class="text-secondary bg-danger"> -->
+                <a class="navbar-brand text-uppercase text-success font-weight-bold" href="/shop">
+                  <img src='{% static "shop/img/2.png" %}' class="" style="height: 60px; width: 100%;">
+                  <h4 class="text-capitalize text-white font-weight-bold">SPTECHSHOP</h4>
+                  </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler fas fa-angle-double-down text-white font-weight-bold"></span>
+                </button>
+                <div class="collapse navbar-collapse text-info font-weight-bold" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto text-white text-uppercase">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white font-weight-bold" href="/shop">
+                              <i class="fas fa-home fa-2x text-white animated  zoomInDown delay-1s">  </i> Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <i class=""></i>
+                            <a class="nav-link text-white font-weight-bold " href="/shop/about"> <i class="fas  fa-graduation-cap [&#xf19d;]   fa-2x text-white animated  zoomInDown delay-1s">  </i> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold" href="/shop/contact"> <i class="fas  fa-phone [&#xf095;]  fa-2x text-white animated  zoomInDown delay-1s"> </i> contact</a>
+                        </li>
+<!--
+                        <li class="nav-item">
+                            <a class="nav-link text-danger font-weight-bold" href="/blog"> <i class="fas fa-camera fa-2x text-dark"> </i> BLOG</a>
+                        </li> -->
+
+                        <li class="nav-item">
+                             <a class="nav-link text-white font-weight-bold" href="/shop/checkout">
+                              <i class="fas  fa-rocket [&#xf135;]  fa-2x text-white animated  zoomInDown delay-1s"> </i> checkout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold" href="/shop/tracker">
+                              <i class="fas fa-bell fa-2x text-white animated  zoomInDown delay-1s" ></i> Tracker</a>
+                        </li>
+                    </ul>
+
+                    <form method='get' action='/shop/search/' class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+                        <button class="btn btn-md btn-primary my-2 my-sm-0 animated text-uppercase font-weight-bold  jello delay-1s" type="submit"> <i class="fas fa-search font-weight-bold fa-2x "> </i>Search</button>
+                    </form>
+
+
+<!--
+                        <li class="nav-item">
+                            <a class="nav-link text-danger font-weight-bold" href="/admin">
+                    <button class="btn btn-md btn-success animated infinite  jello delay-1s"><i class="fas fa-user-md [&#xf0f0;]  fa-2x font-weight-bold"></i>LOGIN</button></a>
+                        </li> -->
+
+
+
+
+
+
+{% if user.is_authenticated %}
+
+<ul class="navbar-nav ml-auto">
+
+
+  <div class="btn-group dropright">
+
+ <button type="button" class="btn btn-danger btn-md ml-3 dropright">
+ Welcome: {{request.user}}
+  </button>
+
+  <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropright</span>
+  </button>
+
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/logout">Logout</a>
+          <a class="dropdown-item" href="/admin">Admin</a>
+        </div>
+  </div>
+
+
+
+
+    </ul>
+{% else %}
+
+<div>
+
+<button type="button" class="btn  btn-primary ml-2 animated  flash  delay-1s  text-uppercase font-weight-bold" data-toggle="modal" data-target="#loginmodel"> <i class="fa fa-user font-weight-bold fa-2x "> </i>
+  login
+</button>
+
+<button type="button" class="btn  btn-danger ml-2 animated   jello delay-1s text-uppercase font-weight-bold " data-toggle="modal" data-target="#signupnmodel"> <i class="fa fa-address-book font-weight-bold fa-2x "> </i>
+  Signup
+</button>
+
+
+{% endif %}
+
+                    <button type="button" onclick="hid()" class="btn btn-md btn-success mx-2 animated  flash" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+
+       (<span id="cart" class="animated  zoomInDown infinite delay-1s" >0</span>) <i class="fas fa-cart-plus fa-2x"></i>
+                    </button>
+
+
+
+        </nav>
+    </section>
+</div>
+
+
+{% for message in messages %}
+
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{% endfor %}
+
+<!-- <!-Login - Modal -->
+
+<div class="modal fade " id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <h2 class="text-center font-weight-bold text-info text-uppercase p-2"> Login Here</h2>
+<hr>
+      <div class="modal-body">
+        <form action="/login" method="post">{% csrf_token %}
+  <div class="form-group text-danger font-weight-bold text-uppercase">
+    <label for="loginusername">UserName</label>
+    <input type="text" class="form-control" id="loginusername" name="loginusername" aria-describedby="emailHelp" placeholder="Enter Your UserName "  required="">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="form-group  text-danger font-weight-bold text-uppercase">
+    <label for="loginpassword">Password</label>
+    <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Confirm Your password" required="">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your Confirm password  with anyone else.</small>
+
+  </div>
+
+
+  <button type="submit" class="btn btn-info">Submit</button>
+</form>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-md" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--/////////////////////// signup start/////////////////// -->
+
+<section class="container-fluid bg-dark">
+<div class="modal fade" id="signupnmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <h2 class="text-center font-weight-bold text-success text-uppercase p-2"> Sign Up Here</h2>
+
+      <div class="modal-body">
+
+        <!-- ///////////////action performs/////////////// -->
+        <form action="/signup" method="post">{% csrf_token %}
+
+            <div class="form-group">
+    <label for="username">USER NAME :</label>
+    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder=" User name (Lowercase & alphnumeric )" required="">
+  </div>
+
+  <div class="form-group">
+    <label for="fname">First NAME :</label>
+    <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" placeholder="first name" required="">
+  </div>
+
+    <div class="form-group">
+    <label for="lname">Last NAME :</label>
+    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp" placeholder="Last Name" required="">
+  </div>
+
+
+    <div class="form-group">
+    <label for="email">EMAIL Address :</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required="">
+
+  </div>
+
+
+  <div class="form-group">
+    <label for="pass1">Enter your Password :</label>
+    <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Choose Your Password" required="">
+  </div>
+
+
+  <div class="form-group">
+    <label for="pass2">REEnter your Password :</label>
+    <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm Your Password" required="">
+  </div>
+
+
+  <button type="submit" class="btn btn-success btn-md">Submit</button>
+</form>
+
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger text-right" data-dismiss="modal">Close</button>
+
+      </div> 
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
+
+    {% block body %}
+
+
+
+     {% endblock %}
+
+
+
+    {% block footer %}
+
+
+<section class="container-fluid text-white bg-dark">
+<div class="container">
+  <div class="row">
+<div class="col-md-8">
+
+      <footer class="page-footer">
+          <div class="">
+            <div class="row">
+              <div class="">
+                <h1 class="text-white fontweight-bold p-3 text-center ">SPTECH SHOP</h1>
+                <h6 class="text-justify-content text-center">SPTECH  is an Indian electronic commerce company based in Bengaluru, India. Founded by Sachin Bansal and Binny Bansal in 2007, the company initially focused on book sales, before expanding into other product categories such as consumer electronics, fashion, and lifestyle products. The service competes primarily with Amazon' s Indian subsidiary, and the domestic rival Snapdeal.[5][6] as of March 2019s, Flipkart held a 39.5% market share of India's e-commerce industry.[7] Flipkart is significantly dominant in the sale of apparel (a position that was bolstered by its acquisitions of Myntra and Jabong.com), and was described as being "neck and neck" with Amazon in the sale of electronics and mobile phones.[8] Flipkart also owns PhonePe, a mobile payments service based on the Unified Payments Interface (UPI). In August 2018, U.S.-based retail chain Walmart acquired a 77% controlling stake in Flipkart for US$16 billion, valuing it at $22 billion</h6>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+        </footer>
+</div>
+
+<div class="col-md-4 tect-center">
+
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text p-3">ALL PAGE </h5>
+                <ul class="">
+
+                  <li>
+                      <i class="fas fa-home fa-2x text-white animated   zoomInDown delay-1s">  </i> <a class="text-white" href="/shop">HOME</a></li>
+                  <li>
+                              <i class="fas fa-clock fa-2x text-white animated  zoomInDown delay-1s" ></i> <a class="text-white" href="/shop/about">ABOUT</a></li>
+                  <li>
+                              <i class="fas fa-heartbeat fa-2x text-white animated  zoomInDown delay-1s" ></i> <a class="text-white" href="/shop/contact">CONTACT</a></li>
+                  <li>
+                              <i class="fas fa-eye fa-2x text-white animated  zoomInDown delay-1s" ></i> <a class="text-white" href="/shop/checkout">CHEKOUT</a></li>
+                  <li>
+                              <i class="fas fa-bell fa-2x text-white animated  zoomInDown delay-1s" ></i> <a class="text-white" href="/shop/tracker">TRACKER</a></li>
+
+
+                </ul>
+              </div>
+</div>
+</div>
+
+
+
+</section>
+
+
+<section class="container-fluid bg-secondary">
+
+               <marquee direction="right"scrollamount="10%"><font color="#fff" face="Arial"align="centre" size="=+4"><h3>WWW.Onlineguru.SHOP.COM Copyright by @2019 </h3></font></marquee>
+</section>
+
+     {% endblock %}
+
+    <!-- <! Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    {% block js %} {% endblock %}
+
+  </body>
+</html>

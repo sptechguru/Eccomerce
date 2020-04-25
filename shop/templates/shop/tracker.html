@@ -1,0 +1,158 @@
+{% extends 'shop/basic.html' %}
+{% block title%} My Awesome Cart Tracker{% endblock %}
+<style>
+        {% block css %}
+ .s2 input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid gold;
+  border-radius:150px;
+color:blue;
+  font-size:25px;
+
+}
+
+ button
+{
+
+      background: linear-gradient(57deg, #0000 , black);
+
+
+}
+
+ button:hover{
+      background: linear-gradient(57deg, red, blue );
+}
+
+ul
+ {
+  list-style: none;
+ }
+
+ ul li
+ {
+  text-decoration: none;
+
+ }
+ul li a
+{
+  font-size: 20px;
+}
+
+
+
+    {% endblock %}
+    </style>
+{% block body %}
+
+<div class="container-fluid bg-light s2 p-5">
+    <div class="col my-4">
+          <h1 class="text-center text-uppercase text-warning font-weight-bold  wooble ">TRACK ORDERS</h1> <br>
+ 
+ <div class="col my-4">
+        <h1 class="text-info font-weight-bold text-capitalize">Enter your Order Id and Email address to track your order</h1> <br>
+
+        <form method="post" action="#" id="trackerForm" class="was-validated animated  rollIn delay-2s">{% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <h1 class="text-warning font-weight-bold"><label for="inputname">Order Id</label></h1>
+                    <input type="text" class="form-control" id="orderId" name="orderId" placeholder="Order Id">
+                </div>
+                <div class="form-group col-md-6">
+                    <h1 class="text-warning font-weight-bold"><label for="inputEmail4">Email</label></h1>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <button type="submit" class=" btn btn-lg btn-primary">Track Order</button>
+            </div>
+    </div>
+
+            <div class="col-md-12">    
+        <h1 class="text-warning font-weight-bold text-capitalize">Your Order Details</h1><br>
+        <div class="my-4 bg-success">
+            <h3><ul class="alert alert-secondary p-2 font-weight-bold text-info" role="alert" id="citems">
+
+                 <h3 class="text-white font-weight-bold text-capitalize"> Your Order Details</h3>
+
+
+            </ul></h3>
+        </div>
+    </div>
+
+
+        <div class="col-md-12 my-4">    
+        <h1 class="text-warning font-weight-bold text-capitalize">Your Order Status</h2><br>
+        <div class="my-4 bg-success">
+            <h3><ul class="alert alert-secondary p-2 font-weight-bold text-info" role="alert" id="items">
+
+                 <h3 class="text-white font-weight-bold text-capitalize"> Your Order Status</h3>
+
+
+            </ul></h3>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+</div>
+</div>
+
+{% endblock %}
+{% block js %}
+<script>
+$('#trackerForm').submit(function(event) {
+    $('#items').empty();
+    var formData = {
+        'orderId': $('input[name=orderId]').val(),
+        'email': $('input[name=email]').val(),
+        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+    };
+    $.ajax({
+            type: 'POST',
+            url: '/shop/tracker/',
+            data: formData,
+            encode: true
+        })
+        .done(function(data) {
+            $('#citems').empty();
+            console.log(data)
+            data = JSON.parse(data);
+            if (data['status'] == 'success') {
+                updates = data['updates'];
+                for (i = 0; i < updates.length; i++) {
+                    let text = updates[i]['text'];
+                    let time = updates[i]['time'];
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${text}
+                    <span class="badge badge-primary badge-pill">${time}</span>
+                </li>`
+                    $('#items').append(mystr);
+                }
+                // Fill in the order details
+                cart = JSON.parse(data['itemsJson']);
+                console.log(cart);
+                for (item in cart) {
+                    let name = cart[item][1];
+                    let qty = cart[item][0];
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${name}
+                    <span class="badge badge-primary badge-pill">${qty}</span>
+                </li>`
+                    $('#citems').append(mystr);
+                }
+            } else {
+                mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    Sorry, We are not able to fetch this order id and email. Make sure to type correct order Id and email</li>`
+                $('#items').append(mystr);
+                $('#citems').append(mystr);
+            }
+        });
+    event.preventDefault();
+});
+</script>
+{% endblock %}

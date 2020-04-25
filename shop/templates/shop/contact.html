@@ -1,0 +1,163 @@
+{% extends 'shop/basic.html' %}
+{% block title%} Title of Contact us{% endblock %}
+    {% load static %}
+
+<style>
+        {% block css %}
+        .container-fluid
+        {
+          margin: 0px;
+          padding: 0PX;
+        }
+
+
+          .col-md-3
+          {
+
+          display: inline-block;
+          margin-left:-4px;
+
+          }
+          .carousel-indicators .active {
+          background-color: blue;
+            }
+          .col-md-3 img{
+          width:100%;
+          height:auto;
+          }
+          body .carousel-indicator li{
+          background-color: blue;
+          }
+          body .carousel-indicators{
+          bottom: 0;
+          }
+          body .carousel-control-prev-icon,
+          body .carousel-control-next-icon{
+          background-color: blue;
+          }
+           body .no-padding{
+           padding-left: 0,
+           padding-right: 0;
+           }
+
+  * {
+    margin: 0px;
+    padding: 0px;
+ 
+}
+
+ button
+{
+
+      background: linear-gradient(57deg, #0000 , black);
+
+
+}
+
+ button:hover{
+      background: linear-gradient(57deg, red, blue );
+}
+ ul
+ {
+  list-style: none;
+ }
+
+ ul li
+ {
+  text-decoration: none;
+
+ }
+ul li a
+{
+  font-size: 20px;
+}
+
+.spimg
+{
+    background-image: url({% static 'shop/img/sp3.jpg' %});
+    background-size: cover;
+    background-position: center;
+}
+
+.bggm input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 3px solid gold;
+  border-radius:150px;
+  color:blue;
+  font-size:20px;
+  font-weight:bold;
+}
+
+
+
+.bggm textarea{
+     border-radius:10px;
+       color:blue;
+         border-bottom: 3px solid gold;
+  font-size:20px;
+  font-weight:bold;
+}
+.bggm2{
+    background: linear-gradient(57deg, gold, skyblue );
+}
+
+.bggm
+ {
+        /*background:url("http://images6.fanpop.com/image/photos/41200000/contact-ayjsolicitors-41261359-1200-630.jpg");*/
+            background:url("https://previews.123rf.com/images/peshkov/peshkov1712/peshkov171200082/91104636-hand-pointing-at-e-mail-network-blurry-interior-background-email-marketing-concept-3d-rendering.jpg");
+        background-size:cover;
+            background-position: center;
+
+}
+
+
+
+    {% endblock %}
+    </style>
+{% block body %}
+{% load static %}
+<section class="container-fluid bggm ">
+<h1 class="text-center text-uppercase text-warning font-weight-bold p-2">Contact Me</h1>
+
+<div class="container my-3 text-white font-weight-bold">
+<form action="/shop/contact/" method="post" required="required" class=" was-validated animated  rotateInUpRight delay-2s">
+  {% csrf_token %}
+        <div class="form-group ">
+            <h3><label for="name">Name</label></h3>
+            <input type="text" class="form-control" id="name" name='name' placeholder="Enter Your Name" required="">
+        </div>
+        <div class="form-group">
+          <h3><label for="name">Email</label></h3>
+            <input type="email" class="form-control" id="email" name='email' placeholder="Enter Your Email" required="" title="invalid Email">
+        </div>
+        <div class="form-group">
+            <h3><label for="name">Mobile Number</label></h3>
+            <input type="tel" class="form-control" id="phone" name='phone' placeholder="+91 Enter Your Phone Number" required="">
+        </div>
+        <div class="form-group">
+            <h3><label for="desc">How May We Help You?</label></h3>
+            <textarea class="form-control" id="desc" name='desc' rows="3" placeholder="Enter your messages..........." required=""></textarea>
+        </div>
+
+        <button id="sbt" type="submit" class="btn btn-success btn-lg">Submit</button>
+    </form>
+</div>
+
+<section class="container-fluid p-5 bg-light">
+    <div class="row ">
+        <div class="col-md-12 ">
+            <iframe class="bg-dark" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.3998134652975!2d75.8400105144372!3d22.750539132150355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39630277512c4c4b%3A0xd077cd6f46e4d7b4!2sPrince%20Nagar%20Rd%2C%20Prince%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh%20452015!5e0!3m2!1sen!2sin!4v1566723952411!5m2!1sen!2sin" width="100%;" height="450" frameborder="0" style="border-radius:20px;" allowfullscreen=""></iframe>
+        </div>
+
+
+    </div>
+</section>
+</section>
+<script>
+
+</script>
+{% endblock %}
